@@ -1,0 +1,38 @@
+﻿@{ 
+    Layout = null;
+}
+
+@using System.Web;
+
+<script type="text/javascript">
+$(function () {
+    $('#chart').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Monthly Currency Course Dynamic'
+        },
+        xAxis: {
+            categories: [ @Html.Raw("'" + String.Join("','", ViewBag.Days) + "'") ]
+        },
+        yAxis: {
+            title: {
+                text: 'Cost (RUB)'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Value',
+            data: [ @String.Join(",", ViewBag.Data) ]
+        }]
+    });
+});
+</script>
