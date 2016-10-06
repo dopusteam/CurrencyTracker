@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#loading{
+    display:none;
+    font-weight:bold;
+    color:red;
+    font-size:140%;
+}
